@@ -38,11 +38,11 @@ namespace Gamekit3D
         {
             Transform keyboardAndMouseCameraTransform = transform.Find("KeyboardAndMouseFreeLookRig");
             if (keyboardAndMouseCameraTransform != null)
-                keyboardAndMouseCamera = keyboardAndMouseCameraTransform.GetComponent<CinemachineFreeLook>();
+                keyboardAndMouseCamera = keyboardAndMouseCameraTransform.GetComponent<CinemachineVirtualCameraBase>();
 
             Transform controllerCameraTransform = transform.Find("ControllerFreeLookRig");
             if (controllerCameraTransform != null)
-                controllerCamera = controllerCameraTransform.GetComponent<CinemachineFreeLook>();
+                controllerCamera = controllerCameraTransform.GetComponent<CinemachineVirtualCameraBase>();
 
             PlayerController playerController = FindFirstObjectByType<PlayerController>();
             if (playerController != null && playerController.name == "Ellen")
