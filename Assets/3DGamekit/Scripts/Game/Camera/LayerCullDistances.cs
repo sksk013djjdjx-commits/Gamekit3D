@@ -70,7 +70,7 @@ namespace Gamekit3D.Cameras
             camera.farClipPlane = settings[pickedSetting].farPlane;
             camera.nearClipPlane = settings[pickedSetting].nearPlane;
             camera.layerCullDistances = settings[pickedSetting].distances;
-            camera.layerCullSpherical = true;
+            //camera.layerCullSpherical = true;
 
             computedDistances = new float[settings[pickedSetting].distances.Length];
             for (int i = 0; i < settings[pickedSetting].distances.Length; ++i)
