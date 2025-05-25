@@ -1,6 +1,7 @@
-using UnityEngine;
+﻿using UnityEngine;
 using Gamekit3D.Message;
 using System.Collections;
+using Unity.Cinemachine;
 using UnityEngine.XR.WSA;
 
 namespace Gamekit3D
@@ -319,7 +320,8 @@ namespace Gamekit3D
             Vector2 moveInput = m_Input.MoveInput;
             Vector3 localMovementDirection = new Vector3(moveInput.x, 0f, moveInput.y).normalized;
             
-            Vector3 forward = Quaternion.Euler(0f, cameraSettings.Current.m_XAxis.Value, 0f) * Vector3.forward;
+            InputAxis axis = cameraSettings.CurrentOrbitalFollow.HorizontalAxis;
+            Vector3 forward = Quaternion.Euler(0f, axis.Value, 0f) * Vector3.forward;
             forward.y = 0f;
             forward.Normalize();
 

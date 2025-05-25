@@ -259,7 +259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4264933078614878}
-  - component: {fileID: 114185442476731706}
+  - component: {fileID: 568420204847926469}
   m_Layer: 19
   m_Name: DollyCart1 (1)
   m_TagString: Untagged
@@ -283,7 +283,7 @@ Transform:
   - {fileID: 4267708333681998}
   m_Father: {fileID: 4315288582896790}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114185442476731706
+--- !u!114 &568420204847926469
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -292,14 +292,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 1140647965014728}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99a9c787e5d1bbf48a389834c4a9641c, type: 3}
+  m_Script: {fileID: 11500000, guid: 450f466b666a79a4698f2b19a5c87c03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Path: {fileID: 114870094139949140}
-  m_UpdateMethod: 0
-  m_PositionUnits: 2
-  m_Speed: 0.015
-  m_Position: 0.5
+  m_SplineSettings:
+    Spline: {fileID: 3098889454056633014}
+    Position: 0.5
+    Units: 1
+  UpdateMethod: 0
+  AutomaticDolly:
+    Enabled: 1
+    Method:
+      rid: 5343937142208069842
+  TrackingTarget: {fileID: 0}
+  m_LegacyPosition: -1
+  m_LegacyUnits: 0
+  m_LegacySpline: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: 5343937142208069842
+      type: {class: SplineAutoDolly/FixedSpeed, ns: Unity.Cinemachine, asm: Unity.Cinemachine}
+      data:
+        Speed: 0.015
 --- !u!1 &1192406092755078
 GameObject:
   m_ObjectHideFlags: 0
@@ -5649,7 +5664,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4683422369778104}
-  - component: {fileID: 114870094139949140}
+  - component: {fileID: 3098889454056633014}
+  - component: {fileID: 6335270346098815776}
   m_Layer: 19
   m_Name: DollyTrack1
   m_TagString: Untagged
@@ -5672,7 +5688,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4315288582896790}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114870094139949140
+--- !u!114 &3098889454056633014
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5681,34 +5697,230 @@ MonoBehaviour:
   m_GameObject: {fileID: 1410993395233232}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a200b19ca1a9685429ed7e043c28e904, type: 3}
+  m_Script: {fileID: 11500000, guid: dab5c7d4c32e743048dfca98e2d5914f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Resolution: 20
-  m_Appearance:
-    pathColor: {r: 0, g: 1, b: 0, a: 1}
-    inactivePathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    width: 0
-  m_Looped: 1
-  m_Waypoints:
-  - position: {x: 0.92559195, y: 0, z: 5.8984184}
-    roll: 0
-  - position: {x: 14.95101, y: 0, z: -9.223789}
-    roll: 0
-  - position: {x: 38.232418, y: 0, z: -12.896656}
-    roll: 0
-  - position: {x: 56.886646, y: 0, z: -22.955593}
-    roll: 0
-  - position: {x: 51.386017, y: 0, z: -30.50273}
-    roll: 0
-  - position: {x: 35.64692, y: 0, z: -18.632622}
-    roll: 0
-  - position: {x: 15.668224, y: 0, z: -6.0447674}
-    roll: 0
-  - position: {x: -3.909751, y: 0, z: -2.1982841}
-    roll: 0
-  - position: {x: -9.849446, y: 0, z: 9.667204}
-    roll: 0
+  m_Spline:
+    m_EditModeType: 1
+    m_Knots: []
+    m_MetaData: []
+    m_Closed: 0
+    m_IntData:
+      m_Data: []
+    m_FloatData:
+      m_Data: []
+    m_Float4Data:
+      m_Data: []
+    m_ObjectData:
+      m_Data: []
+  m_Splines:
+  - m_EditModeType: 1
+    m_Knots:
+    - Position:
+        x: 0.92559195
+        y: 0
+        z: 5.8984184
+      TangentIn:
+        x: 0
+        y: 0
+        z: -6.2505364
+      TangentOut:
+        x: 0
+        y: 0
+        z: 6.2505364
+      Rotation:
+        value:
+          x: 0
+          y: 0.928738
+          z: 0
+          w: 0.37073675
+    - Position:
+        x: 14.95101
+        y: 0
+        z: -9.223789
+      TangentIn:
+        x: 0
+        y: 0
+        z: -6.9190927
+      TangentOut:
+        x: 0
+        y: 0
+        z: 6.9190927
+      Rotation:
+        value:
+          x: 0
+          y: 0.8535909
+          z: 0
+          w: 0.52094394
+    - Position:
+        x: 38.232418
+        y: 0
+        z: -12.896656
+      TangentIn:
+        x: 0
+        y: 0
+        z: -8.523842
+      TangentOut:
+        x: 0
+        y: 0
+        z: 8.523842
+      Rotation:
+        value:
+          x: 0
+          y: 0.77033424
+          z: 0
+          w: 0.6376403
+    - Position:
+        x: 56.886646
+        y: 0
+        z: -22.955593
+      TangentIn:
+        x: 0
+        y: 0
+        z: -4.7807236
+      TangentOut:
+        x: 0
+        y: 0
+        z: 4.7807236
+      Rotation:
+        value:
+          x: 0
+          y: 0.96905535
+          z: 0
+          w: 0.24684368
+    - Position:
+        x: 51.386017
+        y: 0
+        z: -30.50273
+      TangentIn:
+        x: 0
+        y: 0
+        z: -4.4376507
+      TangentOut:
+        x: 0
+        y: 0
+        z: 4.4376507
+      Rotation:
+        value:
+          x: 0
+          y: -0.6420551
+          z: -0
+          w: 0.7666586
+    - Position:
+        x: 35.64692
+        y: 0
+        z: -18.632622
+      TangentIn:
+        x: 0
+        y: 0
+        z: -8.114366
+      TangentOut:
+        x: 0
+        y: 0
+        z: 8.114366
+      Rotation:
+        value:
+          x: 0
+          y: -0.40856844
+          z: -0
+          w: 0.9127277
+    - Position:
+        x: 15.668224
+        y: 0
+        z: -6.0447674
+      TangentIn:
+        x: 0
+        y: 0
+        z: -7.432028
+      TangentOut:
+        x: 0
+        y: 0
+        z: 7.432028
+      Rotation:
+        value:
+          x: 0
+          y: -0.60130405
+          z: -0
+          w: 0.79902035
+    - Position:
+        x: -3.909751
+        y: 0
+        z: -2.1982841
+      TangentIn:
+        x: 0
+        y: 0
+        z: -5.676453
+      TangentOut:
+        x: 0
+        y: 0
+        z: 5.676453
+      Rotation:
+        value:
+          x: 0
+          y: -0.5035069
+          z: -0
+          w: 0.86399114
+    - Position:
+        x: -9.849446
+        y: 0
+        z: 9.667204
+      TangentIn:
+        x: 0
+        y: 0
+        z: -2.8212087
+      TangentOut:
+        x: 0
+        y: 0
+        z: 2.8212087
+      Rotation:
+        value:
+          x: 0
+          y: 0.25259662
+          z: 0
+          w: 0.9675717
+    m_MetaData:
+    - Mode: 2
+      Tension: 0.5
+    - Mode: 2
+      Tension: 0.5
+    - Mode: 2
+      Tension: 0.5
+    - Mode: 2
+      Tension: 0.5
+    - Mode: 2
+      Tension: 0.5
+    - Mode: 2
+      Tension: 0.5
+    - Mode: 2
+      Tension: 0.5
+    - Mode: 2
+      Tension: 0.5
+    - Mode: 2
+      Tension: 0.5
+    m_Closed: 1
+    m_IntData:
+      m_Data: []
+    m_FloatData:
+      m_Data: []
+    m_Float4Data:
+      m_Data: []
+    m_ObjectData:
+      m_Data: []
+  m_Knots:
+    m_KnotsLink: []
+--- !u!114 &6335270346098815776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410993395233232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5342500578afb24a9b83d6343d32a0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AutoSmooth: 1
 --- !u!1 &1452524799120800
 GameObject:
   m_ObjectHideFlags: 0
@@ -10976,7 +11188,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4610805895686078}
-  - component: {fileID: 114898991099183502}
+  - component: {fileID: 5175943723014571370}
   m_Layer: 19
   m_Name: DollyCart1
   m_TagString: Untagged
@@ -11000,7 +11212,7 @@ Transform:
   - {fileID: 4036509759170104}
   m_Father: {fileID: 4315288582896790}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114898991099183502
+--- !u!114 &5175943723014571370
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11009,14 +11221,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 1768172824124976}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99a9c787e5d1bbf48a389834c4a9641c, type: 3}
+  m_Script: {fileID: 11500000, guid: 450f466b666a79a4698f2b19a5c87c03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Path: {fileID: 114870094139949140}
-  m_UpdateMethod: 0
-  m_PositionUnits: 2
-  m_Speed: 0.015
-  m_Position: 0
+  m_SplineSettings:
+    Spline: {fileID: 3098889454056633014}
+    Position: 0
+    Units: 1
+  UpdateMethod: 0
+  AutomaticDolly:
+    Enabled: 1
+    Method:
+      rid: 5343937142208069841
+  TrackingTarget: {fileID: 0}
+  m_LegacyPosition: -1
+  m_LegacyUnits: 0
+  m_LegacySpline: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: 5343937142208069841
+      type: {class: SplineAutoDolly/FixedSpeed, ns: Unity.Cinemachine, asm: Unity.Cinemachine}
+      data:
+        Speed: 0.015
 --- !u!1 &1788172467158060
 GameObject:
   m_ObjectHideFlags: 0
