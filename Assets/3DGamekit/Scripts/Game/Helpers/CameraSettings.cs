@@ -45,7 +45,7 @@ namespace Gamekit3D
             if (controllerCameraTransform != null)
                 controllerCamera = controllerCameraTransform.GetComponent<CinemachineFreeLook>();
 
-            PlayerController playerController = FindObjectOfType<PlayerController>();
+            PlayerController playerController = FindFirstObjectByType<PlayerController>();
             if (playerController != null && playerController.name == "Ellen")
             {
                 follow = playerController.transform;

@@ -127,7 +127,7 @@ namespace Gamekit3D
             if (landingSource != null)
                 landingPlayer = landingSource.GetComponent<RandomAudioPlayer>();
 
-            cameraSettings = FindObjectOfType<CameraSettings>();
+            cameraSettings = FindFirstObjectByType<CameraSettings>();
 
             if (cameraSettings != null)
             {
