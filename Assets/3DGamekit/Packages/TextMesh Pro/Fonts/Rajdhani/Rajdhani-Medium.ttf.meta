@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: d151d0faf225b2f41be85322a8c28666
-timeCreated: 1503395015
-licenseType: Pro
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -10,7 +8,6 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Rajdhani
   fontNames:
   - Rajdhani
   fallbackFontReferences:
@@ -20,6 +17,8 @@ TrueTypeFontImporter:
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 
