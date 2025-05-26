@@ -26,6 +26,9 @@ ExportedObj/
 *.pdb
 .DS_Store
 
+# Unity specifics
+.multitool
+
 # Unity3D generated meta files
 *.pidb.meta
 
