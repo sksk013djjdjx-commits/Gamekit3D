@@ -18966,6 +18966,11 @@ PrefabInstance:
       propertyPath: 'settings.Array.data[2].distances.Array.data[31]'
       value: 1500
       objectReference: {fileID: 0}
+    - target: {fileID: 566739774674590690, guid: 1fac0dae54de3224181696b709bb4d66,
+        type: 3}
+      propertyPath: m_Antialiasing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 612973562914315996, guid: 1fac0dae54de3224181696b709bb4d66,
         type: 3}
       propertyPath: 'Modifiers.Array.data[0]'
@@ -19186,6 +19191,12 @@ PrefabInstance:
       propertyPath: managedReferences[5343937142208069840].Composition.Bottom.HardLimits.Offset.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5864892620081450779, guid: 1fac0dae54de3224181696b709bb4d66,
+        type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 0fe3e9ffafac2413daed571d1b7a9d27,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 114761749801698018, guid: 1fac0dae54de3224181696b709bb4d66, type: 3}
     - {fileID: 114334557014682562, guid: 1fac0dae54de3224181696b709bb4d66, type: 3}

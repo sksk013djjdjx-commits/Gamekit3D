@@ -112,7 +112,7 @@ Material:
     - _Radius: 3
     - _Saturation: 1
     - _Shininess: 0.2
-    - _Size: 0.0329
+    - _Size: 0.0245
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
