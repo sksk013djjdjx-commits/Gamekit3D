@@ -91,8 +91,8 @@ Material:
     - _DetailNormalMapScale: 1
     - _DistortionBlend: 1
     - _DistortionEnabled: 1
-    - _DistortionStrength: 1.25
-    - _DistortionStrengthScaled: 0.125
+    - _DistortionStrength: 0.4
+    - _DistortionStrengthScaled: 0.040000003
     - _DstBlend: 10
     - _DstBlendAlpha: 10
     - _EmissionEnabled: 0
