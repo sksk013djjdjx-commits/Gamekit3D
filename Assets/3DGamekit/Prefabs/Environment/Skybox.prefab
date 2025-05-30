@@ -2575,6 +2575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerRoots:
   - {fileID: 5558140950697430533}
-  - {fileID: 4197340674950446}
   - {fileID: 4530030554367914}
+  - {fileID: 4197340674950446}
   viewpointOrigin: {fileID: 4829675360753414}
+  targetCamera: {fileID: 0}
