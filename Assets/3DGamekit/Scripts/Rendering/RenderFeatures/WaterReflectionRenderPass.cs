@@ -170,8 +170,10 @@ namespace UnityEngine.Rendering.Universal
             m_CameraSettings = cameraSettings;
         }
 
-        private static void ExecutePass(PassData passData, RasterCommandBuffer cmd, RendererList rendererList, bool isYFlipped)
+        private static void ExecutePass(PassData passData, RasterCommandBuffer cmd, RendererList rendererList)
         {
+            bool previousRTFlipped = passData.cameraData.IsRenderTargetProjectionMatrixFlipped(passData.previousColorTexture);
+            
             Camera camera = passData.cameraData.camera;
 
             // In case of camera stacking we need to take the viewport rect from base camera
@@ -187,7 +189,7 @@ namespace UnityEngine.Rendering.Universal
                 {
                     Matrix4x4 projectionMatrix = Matrix4x4.Perspective(passData.cameraSettings.cameraFieldOfView, cameraAspect,
                         camera.nearClipPlane, camera.farClipPlane);
-                    projectionMatrix = GL.GetGPUProjectionMatrix(projectionMatrix, isYFlipped);
+                    projectionMatrix = GL.GetGPUProjectionMatrix(projectionMatrix, true);
 
                     Matrix4x4 viewMatrix = passData.cameraData.GetViewMatrix();
                     Vector4 cameraTranslation = viewMatrix.GetColumn(3);
@@ -201,7 +203,7 @@ namespace UnityEngine.Rendering.Universal
 
             if (passData.cameraSettings.overrideCamera && passData.cameraSettings.restoreCamera && !passData.cameraData.xr.enabled)
             {
-                RenderingUtils.SetViewAndProjectionMatrices(cmd, passData.cameraData.GetViewMatrix(), GL.GetGPUProjectionMatrix(passData.cameraData.GetProjectionMatrix(0), isYFlipped), false);
+                RenderingUtils.SetViewAndProjectionMatrices(cmd, passData.cameraData.GetViewMatrix(), GL.GetGPUProjectionMatrix(passData.cameraData.GetProjectionMatrix(0), previousRTFlipped), false);
             }            
         }
 
@@ -210,6 +212,7 @@ namespace UnityEngine.Rendering.Universal
             internal WaterReflectionRenderFeature.CustomCameraSettings cameraSettings;
             internal RenderPassEvent renderPassEvent;
 
+            internal TextureHandle previousColorTexture;
             internal TextureHandle color;
             internal TextureHandle depth;
             internal RendererListHandle rendererListHdl;
@@ -267,6 +270,10 @@ namespace UnityEngine.Rendering.Universal
                 // Allocate temporary RT in RenderGraph
                 passData.color = UniversalRenderer.CreateRenderGraphTexture(renderGraph, colorDesc, "WaterReflection_COLOR", false);
                 passData.depth = UniversalRenderer.CreateRenderGraphTexture(renderGraph, depthDesc, "WaterReflection_DEPTH", true);
+                
+                // Backup the handle for the current active one, as we will need it to properly restore the projection matrix
+                passData.previousColorTexture = resourceData.activeColorTexture;
+                builder.UseTexture(passData.previousColorTexture);
 
                 // Bind Color & Depth Render targets
                 builder.SetRenderAttachment(passData.color, 0, AccessFlags.Write);
@@ -302,11 +309,11 @@ namespace UnityEngine.Rendering.Universal
                 
                 // if (cameraData.xr.enabled)
                 //     builder.EnableFoveatedRasterization(cameraData.xr.supportsFoveatedRendering && cameraData.xrUniversal.canFoveateIntermediatePasses);
+                
 
                 builder.SetRenderFunc((PassData data, RasterGraphContext rgContext) =>
                 {
-                    var isYFlipped = false; //data.cameraData.IsRenderTargetProjectionMatrixFlipped(data.color);
-                    ExecutePass(data, rgContext.cmd, data.rendererListHdl, isYFlipped);
+                    ExecutePass(data, rgContext.cmd, data.rendererListHdl);
                 });
             }
         }
