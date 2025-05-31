@@ -211,6 +211,7 @@ namespace UnityEngine.Rendering.Universal
             internal RenderPassEvent renderPassEvent;
 
             internal TextureHandle color;
+            internal TextureHandle depth;
             internal RendererListHandle rendererListHdl;
 
             internal UniversalCameraData cameraData;
@@ -258,11 +259,20 @@ namespace UnityEngine.Rendering.Universal
                 UniversalResourceData resourceData = frameData.Get<UniversalResourceData>();
 
                 InitPassData(cameraData, ref passData);
+                
+                // Allocate render textures
+                var colorDesc = new RenderTextureDescriptor(Screen.width, Screen.height, RenderTextureFormat.DefaultHDR, 0);
+                var depthDesc = new RenderTextureDescriptor(Screen.width, Screen.height, RenderTextureFormat.Depth, 24);
 
-                passData.color = resourceData.activeColorTexture;
-                builder.SetRenderAttachment(resourceData.activeColorTexture, 0, AccessFlags.Write);
-                builder.SetRenderAttachmentDepth(resourceData.activeDepthTexture, AccessFlags.Write);
+                // Allocate temporary RT in RenderGraph
+                passData.color = UniversalRenderer.CreateRenderGraphTexture(renderGraph, colorDesc, "WaterReflection_COLOR", false);
+                passData.depth = UniversalRenderer.CreateRenderGraphTexture(renderGraph, depthDesc, "WaterReflection_DEPTH", true);
 
+                // Bind Color & Depth Render targets
+                builder.SetRenderAttachment(passData.color, 0, AccessFlags.Write);
+                builder.SetRenderAttachmentDepth(passData.depth, AccessFlags.Write);
+                
+                // Bind any other resources we might need
                 TextureHandle mainShadowsTexture = resourceData.mainShadowsTexture;
                 TextureHandle additionalShadowsTexture = resourceData.additionalShadowsTexture;
 
@@ -295,7 +305,7 @@ namespace UnityEngine.Rendering.Universal
 
                 builder.SetRenderFunc((PassData data, RasterGraphContext rgContext) =>
                 {
-                    var isYFlipped = data.cameraData.IsRenderTargetProjectionMatrixFlipped(data.color);
+                    var isYFlipped = false; //data.cameraData.IsRenderTargetProjectionMatrixFlipped(data.color);
                     ExecutePass(data, rgContext.cmd, data.rendererListHdl, isYFlipped);
                 });
             }
