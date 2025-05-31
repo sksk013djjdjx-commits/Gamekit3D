@@ -39,8 +39,6 @@ public class ComplexSkyboxRenderFeature : ScriptableRendererFeature
     // Render pass class
     class CustomSkyboxPass : ScriptableRenderPass
     {
-        ProfilingSampler profilingSampler;
-        
         // Pass data structure for render graph
         private class PassData
         {
