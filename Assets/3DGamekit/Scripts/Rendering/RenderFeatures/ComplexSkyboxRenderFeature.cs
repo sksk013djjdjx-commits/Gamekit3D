@@ -93,7 +93,7 @@ public class ComplexSkyboxRenderFeature : ScriptableRendererFeature
             ));
             
             // Actual pass adding
-            using (var builder = renderGraph.AddRasterRenderPass<PassData>(profilingSampler.name, out var passData))
+            using (var builder = renderGraph.AddRasterRenderPass<PassData>(passName, out var passData))
             {
                 // Setup pass data
                 passData.renderers = meshesToRender;
