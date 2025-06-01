@@ -217,6 +217,10 @@ public class WaterReflectionRenderFeature : ScriptableRendererFeature
         if (renderingData.cameraData.cameraType == CameraType.Preview
             || UniversalRenderer.IsOffscreenDepthTexture(ref renderingData.cameraData))
             return;
+        
+        if (WaterReflection.Instance == null || WaterReflection.Instance.waterPlane==null)
+            return;
+        
         renderer.EnqueuePass(renderPass);
     }
 }

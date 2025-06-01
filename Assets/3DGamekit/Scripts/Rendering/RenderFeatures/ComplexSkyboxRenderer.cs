@@ -25,13 +25,23 @@ public class ComplexSkyboxRenderer : MonoBehaviour
 
     // Singleton
     public static ComplexSkyboxRenderer Instance = null;
+    
+    // Support for domain reload
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    private static void ResetSingleton()
+    {
+        Instance = null;
+    }
 
+    // Initialize singleton & collect renderers
     public void Awake()
     {
+        Debug.Assert(Instance == null, "There should only be one instance of ComplexSkyboxRenderer");
         Instance = this;
         CollectRenderers();
     }
 
+    // Build the cache of all renderers needed for the skybox layers
     private void CollectRenderers()
     {
         cachedRenderers.Clear();
