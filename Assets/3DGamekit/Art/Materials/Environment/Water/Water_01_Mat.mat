@@ -160,14 +160,14 @@ Material:
     - _SmoothnessTextureChannel: 1
     - _Specular: 0.3760684
     - _SpecularHighlights: 1
-    - _Speed: 0.3
+    - _Speed: 0.2
     - _SrcBlend: 5
     - _Turbulence: 0.182
     - _UVSec: 0
     - _Visibility: 0
     - _WaterCullDistance: 400
-    - _WaveFrequency: 1
-    - _WaveHeight: 0.01
+    - _WaveFrequency: 0.1
+    - _WaveHeight: 0.002
     - _WaveLength: 0
     - _ZWrite: 0
     m_Colors:

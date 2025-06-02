@@ -696,6 +696,9 @@
         },
         {
             "m_Id": "c991a194d7344088a7e0d13c6d181fe9"
+        },
+        {
+            "m_Id": "72229de74bfb4f0292ffe5b5014cd06b"
         }
     ],
     "m_Edges": [
@@ -11557,7 +11560,7 @@
     "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
     "m_ObjectId": "5cc4586bf20a42a0867039186d5c3b56",
     "m_Title": "InDir",
-    "m_Content": "",
+    "m_Content": "I replaced the original code that produce very different noise scale as time went up. This instead change the orientation of the waves through time slowly\n",
     "m_TextSize": 0,
     "m_Theme": 0,
     "m_Position": {
@@ -12625,7 +12628,7 @@
         "x"
     ],
     "m_Precision": 0,
-    "m_PreviewExpanded": true,
+    "m_PreviewExpanded": false,
     "m_DismissedVersion": 0,
     "m_PreviewMode": 0,
     "m_CustomColors": {
@@ -13278,6 +13281,26 @@
         "y": 0.0,
         "z": 0.0,
         "w": 0.0
+    }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "72229de74bfb4f0292ffe5b5014cd06b",
+    "m_Title": "Orientation Speed",
+    "m_Content": "THis changes the orientation of the waves, slowly. Bigger number = slower\n",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": -3135.0,
+        "y": 946.0,
+        "width": 200.0,
+        "height": 160.0
+    },
+    "m_Group": {
+        "m_Id": ""
     }
 }
 
@@ -15879,7 +15902,7 @@
     "m_ShaderOutputName": "B",
     "m_StageCapability": 3,
     "m_Value": {
-        "x": 64.0,
+        "x": 512.0,
         "y": 2.0,
         "z": 2.0,
         "w": 2.0
@@ -23079,7 +23102,7 @@
     "m_ObjectId": "f7038b4febf944268bec9e773d9f0863",
     "m_Title": "Scene Z Difference",
     "m_Position": {
-        "x": -2482.000244140625,
+        "x": -2482.0,
         "y": -367.0
     }
 }
