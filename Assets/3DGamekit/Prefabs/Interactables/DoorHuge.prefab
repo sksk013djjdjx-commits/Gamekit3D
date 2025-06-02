@@ -10098,7 +10098,7 @@ MonoBehaviour:
   onStartAudio: {fileID: 82792730463088418}
   onEndAudio: {fileID: 0}
   previewPosition: 0
-  rigidbody: {fileID: 54648540379688030}
+  rigidbodyComponent: {fileID: 54648540379688030}
   start: {x: -0, y: -0, z: 0}
   end: {x: 0, y: -15.47, z: 0}
 --- !u!135 &135171608595238902

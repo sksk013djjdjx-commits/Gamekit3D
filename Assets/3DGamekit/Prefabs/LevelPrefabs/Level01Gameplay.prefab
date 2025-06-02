@@ -24770,7 +24770,7 @@ MonoBehaviour:
   onStartAudio: {fileID: 82029939241425708}
   onEndAudio: {fileID: 0}
   previewPosition: 0
-  rigidbody: {fileID: 54188247404051926}
+  rigidbodyComponent: {fileID: 54188247404051926}
   start: {x: 0.0000038146973, y: 0.10534477, z: -0.24679565}
   end: {x: 0.000019073486, y: -17.31109, z: 0.13502502}
 --- !u!114 &114519716108968876
@@ -117307,7 +117307,7 @@ MonoBehaviour:
   onStartAudio: {fileID: 82923923506349888}
   onEndAudio: {fileID: 0}
   previewPosition: 0
-  rigidbody: {fileID: 54713704733076120}
+  rigidbodyComponent: {fileID: 54713704733076120}
   start: {x: -0, y: -0, z: 0}
   end: {x: 0, y: -15, z: 0}
 --- !u!82 &82923923506349888
@@ -117731,7 +117731,7 @@ MonoBehaviour:
   onStartAudio: {fileID: 82020302357011526}
   onEndAudio: {fileID: 0}
   previewPosition: 0
-  rigidbody: {fileID: 54221679298121656}
+  rigidbodyComponent: {fileID: 54221679298121656}
   start: {x: -0, y: -0, z: 0}
   end: {x: 0, y: -15.47, z: 0}
 --- !u!114 &114090644711130104

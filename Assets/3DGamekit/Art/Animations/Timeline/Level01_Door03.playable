@@ -545,3 +545,4 @@ MonoBehaviour:
     m_DisplayName: CM vcam1
   m_Markers:
     m_Objects: []
+  TrackPriority: 0

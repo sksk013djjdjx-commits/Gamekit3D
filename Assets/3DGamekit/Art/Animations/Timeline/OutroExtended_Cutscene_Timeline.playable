@@ -2861,6 +2861,7 @@ MonoBehaviour:
     m_DisplayName: Grenader_Composer_A
   m_Markers:
     m_Objects: []
+  TrackPriority: 0
 --- !u!114 &114772756444296840
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3022,6 +3023,7 @@ MonoBehaviour:
     m_DisplayName: Outtro B
   m_Markers:
     m_Objects: []
+  TrackPriority: 0
 --- !u!114 &114813569161252058
 MonoBehaviour:
   m_ObjectHideFlags: 1

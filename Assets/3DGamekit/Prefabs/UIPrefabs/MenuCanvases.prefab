@@ -643,8 +643,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: 248799cb4acba48f7b3ee842a80f788c, type: 2}
   mixerParameter: MusicVolume
-  maxAttenuation: 2
-  minAttenuation: -60
 --- !u!1 &1080491702403314
 GameObject:
   m_ObjectHideFlags: 0
@@ -2090,8 +2088,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: 248799cb4acba48f7b3ee842a80f788c, type: 2}
   mixerParameter: MasterVolume
-  maxAttenuation: 0
-  minAttenuation: -60
 --- !u!1 &1303156146064508
 GameObject:
   m_ObjectHideFlags: 0
@@ -6092,8 +6088,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: 248799cb4acba48f7b3ee842a80f788c, type: 2}
   mixerParameter: SFXVolume
-  maxAttenuation: 2
-  minAttenuation: -60
 --- !u!1 &1733378443808648
 GameObject:
   m_ObjectHideFlags: 0

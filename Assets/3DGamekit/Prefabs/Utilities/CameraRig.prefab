@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95fca755b1c294451b70b55d301663b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 20494501241764970}
+  cameraComponent: {fileID: 20494501241764970}
   settings:
   - minimumQualitySetting: 0
     nearPlane: 0.3
@@ -236,13 +236,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5cdd1cf0a0f4c4e8742b8b69eb1ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings:
-  - profile: {fileID: 0}
-    usedAntiAliasing: 0
-    minimumQualitySetting: 0
-  - profile: {fileID: 11400000, guid: ba79ed0065c9054429140ba053d01336, type: 2}
-    usedAntiAliasing: 0
-    minimumQualitySetting: 1
 --- !u!114 &5864892620081450779
 MonoBehaviour:
   m_ObjectHideFlags: 0

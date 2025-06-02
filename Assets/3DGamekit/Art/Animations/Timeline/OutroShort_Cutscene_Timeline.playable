@@ -1498,6 +1498,7 @@ MonoBehaviour:
   m_Clips: []
   m_Markers:
     m_Objects: []
+  TrackPriority: 0
 --- !u!114 &114716673320966074
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -838,6 +838,7 @@ MonoBehaviour:
     m_DisplayName: FreeLookRig
   m_Markers:
     m_Objects: []
+  TrackPriority: 0
 --- !u!114 &114514335266408982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1657,6 +1658,7 @@ MonoBehaviour:
     m_DisplayName: FreeLookRig
   m_Markers:
     m_Objects: []
+  TrackPriority: 0
 --- !u!114 &114966171972485194
 MonoBehaviour:
   m_ObjectHideFlags: 1
