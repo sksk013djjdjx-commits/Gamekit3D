@@ -6,6 +6,12 @@ namespace Gamekit3D
 {
     public class PersistentDataManager : MonoBehaviour
     {
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void ResetSingleton()
+        {
+            instance = null;
+        }
+        
         public static PersistentDataManager Instance
         {
             get
