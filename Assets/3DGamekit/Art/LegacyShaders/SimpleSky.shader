@@ -63,7 +63,7 @@ Shader "Skybox/Simple"
         float3 v = normalize(i.texcoord);
 
         float p = v.y;
-        float p1 = 1 - pow(min(1, 1 - p), _TopSkyFalloff);
+        float p1 = 1 - pow(saturate(1 - p), _TopSkyFalloff);
         float p3 = 1 - pow(min(1, 1 + p), _BottomSkyFalloff);
         float p2 = 1 - p1 - p3;
 
