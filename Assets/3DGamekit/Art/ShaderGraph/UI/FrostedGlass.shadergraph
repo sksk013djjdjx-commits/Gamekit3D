@@ -1832,7 +1832,7 @@
     "m_FunctionName": "BlurFilter",
     "m_FunctionSource": "",
     "m_FunctionSourceUsePragmas": true,
-    "m_FunctionBody": "float tapsX = 5;\nfloat tapsY = 5;\nfloat total = 0;\n\nPixelSize *= Size / (tapsX*2);\n\nfloat  sigma      = tapsX / 4; \nfloat invTwoSig2 = 1.0 / (2.0 * sigma*sigma);\n\nfloat3 accColor = float3(0,0,0);\n\n[loop] \nfor (float loopY = -tapsY; loopY<=tapsY; loopY+=1)\n{\n\t[loop] \n\tfor (float loopX = -tapsX; loopX<=tapsX; loopX+=1)\n\t{\n\t\tfloat2  offset  = float2(loopX, loopY);\n\t\tfloat   r2      = dot(offset, offset);  \n\t\tfloat   weight  = exp( -r2 * invTwoSig2 );\n                    float2 uv = UV + PixelSize * float2(loopX, loopY);\n                    accColor += weight*tex2D(SceneColor, uv);\n\t\ttotal+=weight;\n\t}\n}\n\nResult = accColor / total;"
+    "m_FunctionBody": "float tapsX = 5;\nfloat tapsY = 5;\nfloat total = 0;\n\nPixelSize *= Size / (tapsX*2);\n\nfloat  sigma      = tapsX / 4; \nfloat invTwoSig2 = 1.0 / (2.0 * sigma*sigma);\n\nfloat3 accColor = float3(0,0,0);\n\n[loop] \nfor (float loopY = -tapsY; loopY<=tapsY; loopY+=1)\n{\n\t[loop] \n\tfor (float loopX = -tapsX; loopX<=tapsX; loopX+=1)\n\t{\n\t\tfloat2  offset  = float2(loopX, loopY);\n\t\tfloat   r2      = dot(offset, offset);  \n\t\tfloat   weight  = exp( -r2 * invTwoSig2 );\n                    float2 uv = UV + PixelSize * float2(loopX, loopY);\n                    accColor += weight*tex2D(SceneColor, uv).rgb;\n\t\ttotal+=weight;\n\t}\n}\n\nResult = accColor / total;"
 }
 
 {
