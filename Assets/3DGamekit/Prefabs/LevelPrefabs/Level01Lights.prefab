@@ -1806,7 +1806,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4374396225174916}
   - component: {fileID: 108162877123411416}
-  - component: {fileID: 114504232013334580}
   - component: {fileID: 114644691201779828}
   m_Layer: 0
   m_Name: Directional light
@@ -1895,18 +1894,6 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
---- !u!114 &114504232013334580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1966315073147184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c692c55f64574c9a80f4a5420145ab4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114644691201779828
 MonoBehaviour:
   m_ObjectHideFlags: 0
