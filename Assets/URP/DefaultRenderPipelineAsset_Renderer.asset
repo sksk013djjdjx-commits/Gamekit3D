@@ -57,6 +57,19 @@ MonoBehaviour:
       restoreCamera: 1
       offset: {x: 0, y: 0, z: 0, w: 0}
       cameraFieldOfView: 60
+--- !u!114 &-1084266040028930960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a073f94349d443819687f193bed9c18, type: 3}
+  m_Name: GaussianBlurRenderFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,7 +99,8 @@ MonoBehaviour:
   m_RendererFeatures:
   - {fileID: -9198039941283463882}
   - {fileID: -4033333524040460773}
-  m_RendererFeatureMap: 36bdf11d68ff59801bd6e48687b806c8
+  - {fileID: -1084266040028930960}
+  m_RendererFeatureMap: 36bdf11d68ff59801bd6e48687b806c8705c0e02c8e9f3f0
   m_UseNativeRenderPass: 0
   xrSystemData: {fileID: 0}
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
